@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 export default function Task({ task: { id, title, state }, onArchiveTask, onPinTask }) {
   return (
+
     <div className={`list-item ${state}`}>
       <label className="checkbox">
         <input
@@ -14,7 +15,7 @@ export default function Task({ task: { id, title, state }, onArchiveTask, onPinT
         <span className="checkbox-custom" onClick={() => onArchiveTask(id)} />
       </label>
       <div className="title">
-        <input type="text" value={title} readOnly={true} placeholder="Input title" />
+        <input type="text" value={title} readOnly={true} placeholder="Input title" style={{ 'text-overflow': 'ellipsis' }} />
       </div>
 
       <div className="actions" onClick={event => event.stopPropagation()}>
